@@ -17,7 +17,7 @@ def loop():
         file.write('\n')
 
 
-t = threading.Thread(target=loop, name='loopthread')
+t = threading.Thread(target=loop, name='loopthread')    #多线程
 t.start()
 t.join()
 file.close()

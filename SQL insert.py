@@ -12,7 +12,7 @@ cursor.execute("DROP TABLE IF EXISTS weibo")
 sql = "CREATE TABLE weibo ( qq varchar(11) NOT NULL, phone  varchar(11))"
 cursor.execute(sql)
 # 使用 execute()  方法执行 SQL 查询
-with open("file.txt", "r", encoding='UTF-8') as f:
+with open("file.txt", 'r', encoding='UTF-8') as f:
     next(f)
     for line in f:
         line = line.split("-")
@@ -22,4 +22,4 @@ with open("file.txt", "r", encoding='UTF-8') as f:
     cursor.close()
     conn.close()
     end = time.time()
-    print('time is %d seconds ' % (end - begin))
+    print("time is %d seconds " % (end - begin))
