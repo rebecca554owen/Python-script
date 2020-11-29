@@ -1,12 +1,13 @@
-# -*- coding: cp936 -*-
+# -*- coding:utf-8 -*-
 import os
 import time
 
-def mkSubFile(lines,head,srcName,sub):
+
+def mkSubFile(lines, head, srcName, sub):
     [des_filename, extname] = os.path.splitext(srcName)
-    filename  = des_filename + '_' + str(sub) + extname
-    print( 'make file: %s' %filename)
-    fout = open(filename,'w')
+    filename = des_filename + '_' + str(sub) + extname
+    print("make file: %s" % filename)
+    fout = open(filename, 'w')
     try:
         fout.writelines([head])
         fout.writelines(lines)
@@ -14,8 +15,9 @@ def mkSubFile(lines,head,srcName,sub):
     finally:
         fout.close()
 
-def splitByLineCount(filename,count):
-    fin = open(filename,'r')
+
+def splitByLineCount(filename, count):
+    fin = open(filename, 'r')
     try:
         head = fin.readline()
         buf = []
@@ -23,15 +25,16 @@ def splitByLineCount(filename,count):
         for line in fin:
             buf.append(line)
             if len(buf) == count:
-                sub = mkSubFile(buf,head,filename,sub)
+                sub = mkSubFile(buf, head, filename, sub)
                 buf = []
         if len(buf) != 0:
-            sub = mkSubFile(buf,head,filename,sub)
+            sub = mkSubFile(buf, head, filename, sub)
     finally:
         fin.close()
 
+
 if __name__ == '__main__':
     begin = time.time()
-    splitByLineCount('file.txt',30000000)
+    splitByLineCount("file.txt", 30000000)
     end = time.time()
-    print('time is %d seconds ' % (end - begin))
+    print("time is %d seconds " % (end - begin))

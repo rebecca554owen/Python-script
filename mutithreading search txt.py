@@ -6,14 +6,14 @@ begin = time.time()
 
 
 def loop():
-    with open('bigdata.txt', "r", encoding='UTF-8') as f:
+    with open("D:\\Update\\file.txt", 'r', encoding='UTF-8') as f:
         for line in f:
-            if 'key word' in line:
+            if "836120472" in line:
                 print(line)
 
 
-t = threading.Thread(target=loop, name="loopthread")
+t = threading.Thread(target=loop, name='loopthread')
 t.start()
 t.join()
 end = time.time()
-print('time is %d seconds ' % (end - begin))
+print("time is %d seconds " % (end - begin))
