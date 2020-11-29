@@ -1,2 +1,2 @@
-# merge-TXT-file
-合并多个TXT文件文件。
+# script
+记录一些学习python过程写的脚本。
