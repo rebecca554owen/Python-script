@@ -15,7 +15,7 @@ r = redis.Redis(host="127.0.0.1", port=6379, db=0)
 # 2.利用redis pipline 管道技术
 begin = time.time()
 pipeline = r.pipeline()
-for i in range(1, 1 * 10 ** 6 + 1):   # 100W数据测试
+for i in range(1, 1 * 10 ** 6 + 1):  # 100W数据测试
     pipeline.sadd('方法2', i)
 # with open("D:/Update/result.txt", 'r', encoding='UTF-8') as f:
 #     for line in f:
